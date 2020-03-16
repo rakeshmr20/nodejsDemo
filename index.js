@@ -6,6 +6,9 @@ const product = require('./routes/product.route')
 let db_url = 'mongodb://localhost:27017/products'
 
 const app = express()
+app.set('views', './views')
+app.set('view engine', 'pug')
+app.use(express.static('public'))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use('/products', product)
@@ -22,7 +25,7 @@ mongoose.connect(db_url, {
     process.exit()
 })
 
-let port = 3000
+let port = 8080
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`)

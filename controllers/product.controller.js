@@ -35,3 +35,12 @@ exports.product_delete = (req, res) => {
         res.send(`${req.params.id} Deleted successfully.`)
     })
 }
+
+exports.product_list = (req, res) => {
+    console.log(`Showing all products`)
+    Product.find()
+        .then((products) => {
+            res.render('index', {title: 'Product List', products})
+        })
+        .catch(() => { res.send('Sorry!') })
+}

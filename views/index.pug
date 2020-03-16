@@ -1,0 +1,14 @@
+extends layout
+
+block content
+    if products.length
+        table.listing-table.table-dark.table-striped
+            tr
+                th Name
+                th Price
+            each product in products
+                tr 
+                    td=product.name
+                    td=product.price
+    else
+        p No Product yet!.
