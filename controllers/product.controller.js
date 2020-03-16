@@ -18,7 +18,7 @@ exports.product_create = function(req, res) {
         res.send('Product created successfully.')
     })
 }
-
+// findByIdAndUpdate
 exports.product_update = function(req, res) {
     console.log(req.body)
     Product.findByIdAndUpdate(req.params.id, {$set: req.body},
@@ -26,4 +26,12 @@ exports.product_update = function(req, res) {
             if(err) return next(err)
             res.send('Product updated')
         })
+}
+
+exports.product_delete = (req, res) => {
+    console.log(req.body)
+    Product.findByIdAndRemove(req.params.id, (err) => {
+        if(err) return next(err)
+        res.send(`${req.params.id} Deleted successfully.`)
+    })
 }
