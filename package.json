@@ -1,13 +1,14 @@
 {
-  "name": "MyApp",
+  "name": "my_nodejs_app",
   "version": "1.0.0",
   "description": "",
+  "author": "Rakesh M R <rakeshmr20@gmail.com>",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js"
+    "dev": "node index.js",
+    "start": "node index.js"
   },
   "keywords": [],
-  "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
